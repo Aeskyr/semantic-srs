@@ -27,7 +27,8 @@ offline vanilla HTML, CSS, JavaScript, and SVG rendering.
 
 Data flows as follows: sourced material -> immutable `source_snapshots` -> draft
 rubrics in `cards` -> learner approval -> Codex review -> semantic score -> hidden
-rating -> FSRS calculation -> transactional SQLite update -> dashboard polling.
+rating -> FSRS baseline -> supplemental interval policy -> transactional SQLite
+update -> dashboard polling.
 Dates are stored in UTC ISO 8601 form and localized only by the browser.
 
 ## Component responsibilities
@@ -41,8 +42,9 @@ Dates are stored in UTC ISO 8601 form and localized only by the browser.
   `project://semantic-srs/context` pointer and can supply evidence snapshots.
 - SQLite: is the shared source of truth, using foreign keys, WAL, transactions,
   optimistic card/deck versions, and non-destructive migrations.
-- FSRS 6: alone calculates scheduling state and due dates at 0.90 desired
-  retention; server-controlled scheduling is never overridden by the dashboard.
+- FSRS 6: calculates baseline memory state and intervals at 0.90 desired
+  retention. The server applies the versioned supplemental interval policy below;
+  the dashboard never overrides scheduling.
 - Dashboard: provides local visualization and administrative actions; it does not
   perform conversational review or semantic grading.
 
@@ -58,13 +60,27 @@ Dates are stored in UTC ISO 8601 form and localized only by the browser.
 - `sessions`: start/end timestamps and review count for a deck.
 - `review_events`: append-oriented exact question/answer, semantic evidence,
   mastery, confidence, hidden rating, FSRS before/after state, and correction
-  metadata. Active-card reset edits preserve these rows.
+  metadata. Each row records its scheduling epoch. Active-card reset edits
+  preserve these rows while excluding earlier epochs from future scheduling.
 - `audit_events`: timestamped event type, entity, JSON details, and actor.
 
 Foreign keys are enabled on every connection. Writes use `BEGIN IMMEDIATE`.
 Active-card content edits require explicit confirmation, reset current FSRS state
 and counters, increment `scheduling_epoch`, increment `version`, preserve review
 history, and add an audit event. No permanent-delete interface is provided.
+
+For FSRS learning or relearning intervals shorter than 24 hours, the baseline is
+preserved. Longer intervals are multiplied by:
+
+`min(1, offerings / 4) * easy_streak_factor * clamp(average_score / 0.90, 0.50, 1.10)`
+
+The product is clamped to `0.125–1.60`. Easy-streak factors for zero through four
+consecutive scores at least `0.90` are `0.80`, `1.00`, `1.15`, `1.30`, and
+`1.45`; five or more use `1.60`. A lower score resets the streak. Adjusted long
+intervals are clamped between one day and FSRS's maximum interval. Statistics
+include only the card's current scheduling epoch, so a reset edit starts them
+over. The adjusted due date is written to both the FSRS card JSON and `due_at`;
+FSRS stability and difficulty remain unchanged.
 
 ## MCP tools and grading thresholds
 
@@ -160,12 +176,20 @@ source, tests, documentation, plugin metadata, and the empty `data/` directory
 marker are versioned, while the virtual environment, Python caches, test
 artifacts, logs, and live SQLite data are ignored.
 
+`scripts/reschedule_supplemental.py` deterministically replays every active
+card's current epoch from `initial_fsrs_json`. It defaults to a read-only dry run;
+`--apply` rewrites review before/after snapshots and card schedules in one
+transaction, increments changed card versions, and records policy version plus
+old/new due dates in `audit_events`. Rollout requires a timestamped SQLite backup,
+a reviewed dry run, then an apply run. Repeating an applied replay is idempotent.
+
 ## Current implementation status
 
 Implemented on 2026-07-28: canonical documentation and agent enforcement;
 stable Local RAG discovery pointer verified against representative development
 queries;
 idempotent migrations for deck status/version, scheduling epoch, and audit actor;
+current-epoch review tagging and supplemental-policy replay;
 dashboard overview/cards/sources/sessions/reviews; draft approval/rejection/edit;
 card suspension/restoration; deck archive/restore service and API; confirmed
 active-card reset edits with preserved history; JSON export downloads;
@@ -173,7 +197,11 @@ localhost/token/Host/Origin controls; bundled offline UI; five-second refresh;
 dashboard summary, suspension, and archival MCP tools.
 
 The established review flow, correction flow, source deduplication, optimistic
-card writes, UTC dates, WAL mode, and FSRS scheduling remain implemented.
+card writes, UTC dates, and WAL mode remain implemented. FSRS 6 supplies the
+baseline memory model, while supplemental policy `supplemental-v1` bounds
+long-term intervals using exposure, consecutive Easy performance, and average
+semantic correctness. Normal reviews and grade corrections share this scheduler
+path; corrections deterministically replay the current epoch.
 Card answer disclosures use the exact `Answer` label, omit source identifiers,
 and preserve their per-card open or closed state during card-list refreshes.
 Source snapshots are grouped by `deck_id` beneath exact deck-name disclosures,
@@ -226,6 +254,12 @@ for inline JavaScript.
   buttons through external-script event delegation rather than inline handlers.
 - 2026-07-28: Keep the project in local Git while excluding reproducible
   environments, generated caches, logs, test artifacts, and live learner data.
+- 2026-07-28: Retain FSRS 6 stability and difficulty as the baseline memory
+  model, then apply `supplemental-v1` to intervals of at least one day using
+  current-epoch exposure, Easy streak, and average semantic correctness.
+- 2026-07-28: Make supplemental rollout a backed-up, dry-run-first,
+  transactional replay that rewrites review scheduling snapshots and records
+  old/new due-date audits without changing MCP response shapes.
 
 ## Completed milestone log
 
@@ -248,3 +282,6 @@ for inline JavaScript.
   card, and deck controls with delegated listeners.
 - 2026-07-28: Initialized local source control with runtime and learner-data
   exclusions.
+- 2026-07-28: Added supplemental FSRS interval policy, deterministic
+  current-epoch rescheduling and correction replay, migration audits, tests, and
+  rollout tooling.

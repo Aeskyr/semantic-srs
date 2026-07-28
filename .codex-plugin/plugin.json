@@ -1,6 +1,6 @@
 {
   "name": "semantic-srs",
-  "version": "0.1.0+codex.20260728153323",
+  "version": "0.1.0+codex.20260728171449",
   "description": "Meaning-based spaced repetition with conversational grading and FSRS scheduling",
   "author": {
     "name": "Local developer"

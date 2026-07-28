@@ -23,6 +23,8 @@ DATA_DIR = Path(
 DB_PATH = DATA_DIR / "semantic-srs.sqlite3"
 DESIRED_RETENTION = 0.9
 SCORE_THRESHOLDS = (0.45, 0.70, 0.90)
+SUPPLEMENTAL_POLICY_VERSION = "supplemental-v1"
+EASY_STREAK_FACTORS = (0.80, 1.00, 1.15, 1.30, 1.45, 1.60)
 
 mcp = FastMCP(
     "semantic-srs",
@@ -63,6 +65,38 @@ def new_id(prefix: str) -> str:
 
 def scheduler() -> Scheduler:
     return Scheduler(desired_retention=DESIRED_RETENTION, enable_fuzzing=False)
+
+
+def supplemental_multiplier(scores: list[float]) -> float:
+    """Return the bounded current-epoch interval multiplier."""
+    if not scores:
+        raise ValueError("At least one score is required")
+    offerings = len(scores)
+    easy_streak = 0
+    for score in reversed(scores):
+        if score < SCORE_THRESHOLDS[2]:
+            break
+        easy_streak += 1
+    exposure_factor = min(1.0, offerings / 4)
+    streak_factor = EASY_STREAK_FACTORS[min(easy_streak, 5)]
+    correctness_factor = min(1.10, max(0.50, (sum(scores) / offerings) / 0.90))
+    return min(1.60, max(0.125, exposure_factor * streak_factor * correctness_factor))
+
+
+def apply_supplemental_interval(
+    card: FSRSCard, reviewed_at: datetime, scores: list[float]
+) -> FSRSCard:
+    """Adjust only FSRS intervals of at least one day, preserving memory state."""
+    baseline = card.due - reviewed_at
+    if baseline < timedelta(days=1):
+        return card
+    interval = baseline * supplemental_multiplier(scores)
+    interval = min(
+        max(interval, timedelta(days=1)),
+        timedelta(days=scheduler().maximum_interval),
+    )
+    card.due = reviewed_at + interval
+    return card
 
 
 def hidden_rating(score: float) -> Rating:
@@ -167,7 +201,8 @@ def initialize() -> None:
                 fsrs_before_json TEXT NOT NULL,
                 fsrs_after_json TEXT NOT NULL,
                 corrected_at TEXT,
-                correction_reason TEXT
+                correction_reason TEXT,
+                scheduling_epoch INTEGER NOT NULL DEFAULT 0
             );
 
             CREATE INDEX IF NOT EXISTS reviews_card_time_idx
@@ -185,12 +220,13 @@ def initialize() -> None:
         # Non-destructive, idempotent migrations for dashboard-managed state.
         columns = {
             table: {row[1] for row in db.execute(f"PRAGMA table_info({table})")}
-            for table in ("decks", "cards", "audit_events")
+            for table in ("decks", "cards", "review_events", "audit_events")
         }
         migrations = (
             ("decks", "status", "TEXT NOT NULL DEFAULT 'active'"),
             ("decks", "version", "INTEGER NOT NULL DEFAULT 0"),
             ("cards", "scheduling_epoch", "INTEGER NOT NULL DEFAULT 0"),
+            ("review_events", "scheduling_epoch", "INTEGER NOT NULL DEFAULT 0"),
             ("audit_events", "actor", "TEXT NOT NULL DEFAULT 'system'"),
         )
         for table, column, declaration in migrations:
@@ -588,6 +624,16 @@ def _apply_review(
         review_datetime=reviewed_at,
         review_duration=duration_ms,
     )
+    prior_scores = [
+        row[0]
+        for row in db.execute(
+            """SELECT mastery_score FROM review_events
+               WHERE card_id=? AND scheduling_epoch=?
+               ORDER BY reviewed_at,id""",
+            (card_row["id"], card_row["scheduling_epoch"]),
+        )
+    ]
+    apply_supplemental_interval(updated, reviewed_at, prior_scores + [mastery_score])
     event_id = new_id("review")
     after_json = updated.to_json()
     lapse_increment = (
@@ -598,8 +644,8 @@ def _apply_review(
         INSERT INTO review_events(
             id,card_id,session_id,reviewed_at,question,answer,mastery_score,confidence,
             hidden_rating,covered_json,missing_json,contradictions_json,feedback,
-            followup_used,duration_ms,fsrs_before_json,fsrs_after_json
-        ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            followup_used,duration_ms,fsrs_before_json,fsrs_after_json,scheduling_epoch
+        ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """,
         (
             event_id,
@@ -619,6 +665,7 @@ def _apply_review(
             duration_ms,
             before_json,
             after_json,
+            card_row["scheduling_epoch"],
         ),
     )
     db.execute(
@@ -703,6 +750,48 @@ def srs_record_review(
         )
 
 
+def _replay_current_epoch(
+    db: sqlite3.Connection,
+    card: sqlite3.Row,
+    *,
+    rewrite_snapshots: bool,
+) -> tuple[FSRSCard, int]:
+    """Deterministically rebuild one card from its current-epoch review history."""
+    current = FSRSCard.from_json(card["initial_fsrs_json"])
+    scores: list[float] = []
+    changed_snapshots = 0
+    reviews = db.execute(
+        """SELECT * FROM review_events
+           WHERE card_id=? AND scheduling_epoch=?
+           ORDER BY reviewed_at,id""",
+        (card["id"], card["scheduling_epoch"]),
+    ).fetchall()
+    for review in reviews:
+        before_json = current.to_json()
+        reviewed_at = parse_time(review["reviewed_at"])
+        current, _ = scheduler().review_card(
+            current,
+            Rating(review["hidden_rating"]),
+            review_datetime=reviewed_at,
+            review_duration=review["duration_ms"],
+        )
+        scores.append(review["mastery_score"])
+        apply_supplemental_interval(current, reviewed_at, scores)
+        after_json = current.to_json()
+        if (
+            before_json != review["fsrs_before_json"]
+            or after_json != review["fsrs_after_json"]
+        ):
+            changed_snapshots += 1
+            if rewrite_snapshots:
+                db.execute(
+                    """UPDATE review_events
+                       SET fsrs_before_json=?,fsrs_after_json=? WHERE id=?""",
+                    (before_json, after_json, review["id"]),
+                )
+    return current, changed_snapshots
+
+
 @mcp.tool(
     annotations=ToolAnnotations(
         readOnlyHint=False,
@@ -722,9 +811,9 @@ def srs_correct_latest_review(
         card = require_row(db, "SELECT * FROM cards WHERE id=?", (card_id,), "Card")
         review = require_row(
             db,
-            "SELECT * FROM review_events WHERE card_id=? "
+            "SELECT * FROM review_events WHERE card_id=? AND scheduling_epoch=? "
             "ORDER BY reviewed_at DESC,id DESC LIMIT 1",
-            (card_id,),
+            (card_id, card["scheduling_epoch"]),
             "Review",
         )
         old = {
@@ -732,40 +821,40 @@ def srs_correct_latest_review(
             "confidence": review["confidence"],
             "hidden_rating": review["hidden_rating"],
             "fsrs_after_json": review["fsrs_after_json"],
+            "due_at": card["due_at"],
         }
         rating = hidden_rating(mastery_score)
-        before = FSRSCard.from_json(review["fsrs_before_json"])
-        updated, _ = scheduler().review_card(
-            before,
-            rating,
-            review_datetime=parse_time(review["reviewed_at"]),
-            review_duration=review["duration_ms"],
-        )
-        after_json = updated.to_json()
         db.execute(
             """
             UPDATE review_events SET mastery_score=?,confidence=?,hidden_rating=?,
-                fsrs_after_json=?,corrected_at=?,correction_reason=? WHERE id=?
+                corrected_at=?,correction_reason=? WHERE id=?
             """,
             (
                 mastery_score,
                 confidence,
                 int(rating),
-                after_json,
                 iso(),
                 reason,
                 review["id"],
             ),
         )
+        updated, _ = _replay_current_epoch(db, card, rewrite_snapshots=True)
+        after_json = updated.to_json()
         lapse_count = db.execute(
             """
             SELECT COUNT(*) FROM review_events
-            WHERE card_id=? AND hidden_rating=? AND id != (
+            WHERE card_id=? AND scheduling_epoch=? AND hidden_rating=? AND id != (
                 SELECT id FROM review_events
-                WHERE card_id=? ORDER BY reviewed_at,id LIMIT 1
+                WHERE card_id=? AND scheduling_epoch=? ORDER BY reviewed_at,id LIMIT 1
             )
             """,
-            (card_id, int(Rating.Again), card_id),
+            (
+                card_id,
+                card["scheduling_epoch"],
+                int(Rating.Again),
+                card_id,
+                card["scheduling_epoch"],
+            ),
         ).fetchone()[0]
         db.execute(
             """
@@ -786,6 +875,9 @@ def srs_correct_latest_review(
                         "before": old,
                         "after_score": mastery_score,
                         "reason": reason,
+                        "policy_version": SUPPLEMENTAL_POLICY_VERSION,
+                        "old_due_at": card["due_at"],
+                        "new_due_at": updated.due.isoformat(),
                     }
                 ),
                 iso(),
@@ -797,6 +889,73 @@ def srs_correct_latest_review(
         "hidden_rating": rating.name.lower(),
         "due_at": updated.due.isoformat(),
         "new_version": card["version"] + 1,
+    }
+
+
+def reschedule_supplemental_policy(*, apply: bool = False) -> dict[str, Any]:
+    """Replay active cards under the supplemental policy; dry-run by default."""
+    results: list[dict[str, Any]] = []
+    with connection(write=apply) as db:
+        cards = db.execute(
+            "SELECT * FROM cards WHERE status='active' ORDER BY id"
+        ).fetchall()
+        for card in cards:
+            old_due = card["due_at"]
+            rebuilt, snapshot_changes = _replay_current_epoch(
+                db, card, rewrite_snapshots=apply
+            )
+            new_json = rebuilt.to_json()
+            new_due = rebuilt.due.isoformat()
+            changed = (
+                new_json != card["fsrs_json"]
+                or new_due != old_due
+                or snapshot_changes > 0
+            )
+            item = {
+                "card_id": card["id"],
+                "learning_objective": card["learning_objective"],
+                "scheduling_epoch": card["scheduling_epoch"],
+                "old_due_at": old_due,
+                "new_due_at": new_due,
+                "review_count": card["review_count"],
+                "snapshot_changes": snapshot_changes,
+                "changed": changed,
+            }
+            results.append(item)
+            if apply and changed:
+                now = iso()
+                db.execute(
+                    """UPDATE cards SET fsrs_json=?,due_at=?,version=version+1,
+                       updated_at=? WHERE id=?""",
+                    (new_json, new_due, now, card["id"]),
+                )
+                db.execute(
+                    """INSERT INTO audit_events(
+                           id,event_type,entity_id,details_json,created_at,actor
+                       ) VALUES(?,?,?,?,?,?)""",
+                    (
+                        new_id("audit"),
+                        "supplemental_policy_rescheduled",
+                        card["id"],
+                        dumps(
+                            {
+                                "policy_version": SUPPLEMENTAL_POLICY_VERSION,
+                                "old_due_at": old_due,
+                                "new_due_at": new_due,
+                                "scheduling_epoch": card["scheduling_epoch"],
+                                "rewritten_review_snapshots": snapshot_changes,
+                            }
+                        ),
+                        now,
+                        "migration",
+                    ),
+                )
+    return {
+        "policy_version": SUPPLEMENTAL_POLICY_VERSION,
+        "mode": "apply" if apply else "dry-run",
+        "active_cards": len(results),
+        "changed_cards": sum(item["changed"] for item in results),
+        "cards": results,
     }
 
 

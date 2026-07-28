@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "semantic-srs": {
+      "command": "C:\\Users\\Blin Boss\\plugins\\semantic-srs\\.venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\Users\\Blin Boss\\plugins\\semantic-srs\\server.py"
+      ],
+      "env": {
+        "SEMANTIC_SRS_DATA_DIR": "C:\\Users\\Blin Boss\\plugins\\semantic-srs\\data"
+      }
+    }
+  }
+}

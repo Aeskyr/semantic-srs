@@ -1,0 +1,27 @@
+{
+  "name": "semantic-srs",
+  "version": "0.1.0+codex.20260728153323",
+  "description": "Meaning-based spaced repetition with conversational grading and FSRS scheduling",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Semantic SRS",
+    "shortDescription": "Conversational reviews graded by meaning.",
+    "longDescription": "Create sourced study decks, approve draft cards, answer varied questions naturally, and let deterministic FSRS scheduling maintain review dates and statistics.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Create a sourced study deck for me.",
+      "Show my draft cards for approval.",
+      "Start a due-card review session."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

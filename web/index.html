@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Semantic SRS</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">LOCAL LEARNING SYSTEM</span><h1>Semantic SRS</h1></div>
+    <div class="sync"><i></i><span id="sync">Connecting…</span></div>
+  </header>
+  <nav>
+    <button class="active" data-view="overview">Overview</button>
+    <button data-view="cards">Cards</button>
+    <button data-view="sources">Sources</button>
+    <button data-view="history">History</button>
+  </nav>
+  <main>
+    <section id="overview" class="view active">
+      <div id="metrics" class="metrics"></div>
+      <div class="grid">
+        <article><h2>Decks & backups</h2><div id="deck-list"></div></article>
+        <article><h2>Mastery trend</h2><svg id="trend" viewBox="0 0 700 230"></svg></article>
+        <article><h2>Hidden ratings</h2><div id="ratings" class="rating-bars"></div></article>
+        <article><h2>14-day workload</h2><svg id="forecast" viewBox="0 0 700 230"></svg></article>
+        <article><h2>Weak cards</h2><div id="weak"></div></article>
+      </div>
+    </section>
+    <section id="cards" class="view">
+      <div class="toolbar">
+        <input id="search" placeholder="Search objectives, questions, decks">
+        <select id="status"><option value="">All statuses</option><option>draft</option><option>active</option><option>suspended</option><option>rejected</option></select>
+        <button id="refresh">Refresh</button>
+        <button id="bulk-approve">Approve shown drafts</button>
+        <button id="bulk-reject">Reject shown drafts</button>
+      </div>
+      <div id="card-list" class="list"></div>
+    </section>
+    <section id="sources" class="view"><div id="source-list" class="list"></div></section>
+    <section id="history" class="view">
+      <div class="grid"><article><h2>Recent sessions</h2><div id="session-list"></div></article><article><h2>Review history</h2><div id="review-list"></div></article></div>
+    </section>
+  </main>
+  <dialog id="editor"><form method="dialog"><h2>Edit card</h2><input id="edit-objective"><textarea id="edit-question"></textarea><textarea id="edit-concepts"></textarea><label id="confirm-wrap"><input id="edit-confirm" type="checkbox"> I understand this resets the active schedule while preserving history.</label><menu><button value="cancel">Cancel</button><button id="save" value="default">Save</button></menu></form></dialog>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+mcp==1.28.1
+fsrs==6.3.1
+starlette==0.47.3
+uvicorn==0.35.0
+httpx==0.28.1
+PyYAML==6.0.2

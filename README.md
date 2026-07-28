@@ -6,7 +6,7 @@ and includes a localhost dashboard. The bundled Local RAG companion can index
 your files and supply sourced excerpts; it is installed by default but remains
 optional.
 
-Version 0.2.0 supports Windows 10/11 x64, CPython 3.11, internet access during
+Version 0.2.1 supports Windows 10/11 x64, CPython 3.11, internet access during
 setup, and at least one installed host. Both hosts share the same learner data.
 
 ## Install
@@ -60,7 +60,8 @@ After setup, launch from the downloaded repository:
 ```
 
 The dashboard opens a tokenized localhost URL and uses the same database as both
-hosts.
+hosts. After setup, Claude or Codex can also launch it when asked to “Open the
+Semantic SRS dashboard.”
 
 ## Update and uninstall
 
@@ -120,4 +121,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and
 ```
 
 The project is MIT licensed. Public directory submission for OpenAI or Claude,
-macOS/Linux/WSL support, and packaged executable installers are outside 0.2.0.
+macOS/Linux/WSL support, and packaged executable installers are outside 0.2.1.

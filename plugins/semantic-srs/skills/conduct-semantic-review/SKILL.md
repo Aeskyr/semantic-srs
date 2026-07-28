@@ -1,6 +1,6 @@
 ---
 name: conduct-semantic-review
-description: Create and maintain sourced spaced-repetition decks, approve generated card drafts, run conversational learning or review sessions, grade answers by meaning, update FSRS schedules, show deck statistics, or correct a mistaken review. Use for requests mentioning study decks, flashcards, recall practice, spaced repetition, SRS, due cards, learning sessions, or review performance.
+description: Create and maintain sourced spaced-repetition decks, approve generated card drafts, run conversational learning or review sessions, grade answers by meaning, update FSRS schedules, show deck statistics, open the local dashboard, or correct a mistaken review. Use for requests mentioning study decks, flashcards, recall practice, spaced repetition, SRS, due cards, learning sessions, review performance, or the Semantic SRS dashboard.
 ---
 
 # Conduct Semantic Review
@@ -57,3 +57,16 @@ Read [grading.md](references/grading.md) before grading the first answer in a se
   from the hidden FSRS rating.
 - Use `srs_export_deck` when the learner requests a portable backup.
 - On a version conflict, refetch the card. Never submit the same answer twice.
+
+## Open the dashboard
+
+When the learner asks to open, launch, or show the Semantic SRS dashboard, run:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '$launcher=Join-Path $env:LOCALAPPDATA "SemanticSRS\apps\current\semantic-srs\launch-dashboard.ps1"; Start-Process powershell.exe -ArgumentList "-NoProfile","-ExecutionPolicy","Bypass","-File",$launcher -WindowStyle Hidden'
+```
+
+The launcher starts the localhost dashboard with the shared learner database and
+opens its tokenized URL in the default browser. Do not claim that Semantic SRS
+lacks a dashboard. If the launcher path or runtime is missing, tell the learner
+to run the repository's `setup.ps1` and retry.

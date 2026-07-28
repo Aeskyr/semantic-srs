@@ -1,6 +1,6 @@
 {
   "name": "local-rag",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Private on-device semantic document retrieval",
   "author": {"name": "Vitaliy", "url": "https://github.com/Aeskyr/semantic-srs"},
   "skills": "./skills/",

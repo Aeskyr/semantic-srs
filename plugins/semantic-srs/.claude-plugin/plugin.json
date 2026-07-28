@@ -1,6 +1,6 @@
 {
   "name": "semantic-srs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Meaning-based spaced repetition with conversational grading and FSRS scheduling",
   "author": {"name": "Vitaliy", "url": "https://github.com/Aeskyr/semantic-srs"},
   "homepage": "https://github.com/Aeskyr/semantic-srs",

@@ -4,7 +4,7 @@ Last updated: 2026-07-28
 
 ## Public Windows release plan
 
-Version 0.2.0 packages this project as the public MIT-licensed
+Version 0.2.1 packages this project as the public MIT-licensed
 `Aeskyr/semantic-srs` marketplace repository for Windows 10/11 x64 and CPython
 3.11. The repository contains two cooperating but independently installable
 plugins: `semantic-srs` and the optional `local-rag` retrieval companion. Claude
@@ -37,6 +37,9 @@ The learner approves generated drafts before they enter the queue. Reviews feel
 like a conversation rather than self-reported Again/Hard/Good/Easy buttons. The
 dashboard is launched with one click, opens in a browser, refreshes every five
 seconds, and reflects Codex review writes while it is open.
+The shipped review skill explicitly triggers on dashboard requests and launches
+the installed dashboard in a background PowerShell process; it directs users to
+rerun `setup.ps1` only when the shared runtime is missing.
 
 ## Architecture and data flow
 
@@ -212,7 +215,7 @@ a reviewed dry run, then an apply run. Repeating an applied replay is idempotent
 
 ## Current implementation status
 
-Implemented for 0.2.0 on 2026-07-28: two-plugin public repository layout;
+Implemented for 0.2.1 on 2026-07-28: two-plugin public repository layout;
 synchronized Claude and Codex manifests and marketplace catalogs; portable
 PowerShell MCP launchers; versioned shared runtime staging beneath
 `%LOCALAPPDATA%\SemanticSRS`; isolated lock-hash-aware environments; optional
@@ -257,7 +260,7 @@ for inline JavaScript.
 
 ## Known limitations and deferred features
 
-- Public GitHub publication, the `v0.2.0` tag/release, official host CLI
+- The `v0.2.1` tag/release, official host CLI
   validation, and clean Windows clone/ZIP smoke tests require external
   authenticated hosts and remain release gates rather than locally completed
   work.
@@ -274,7 +277,7 @@ for inline JavaScript.
 
 ## Decision log
 
-- 2026-07-28: Package version 0.2.0 as two independent plugins with Local RAG
+- 2026-07-28: Package version 0.2.1 as two independent plugins with Local RAG
   installed by default but omitted from hard dependencies.
 - 2026-07-28: Resolve all runtime paths from `%LOCALAPPDATA%\SemanticSRS` through
   portable PowerShell launchers so Claude Code and Codex share learner state.
@@ -282,6 +285,8 @@ for inline JavaScript.
   automatic migration merges when both source and destination stores are nonempty.
 - 2026-07-28: Ship the sourced Imperial Russia Monarchs deck as a validated,
   unreviewed showcase export rather than bundling live learner data.
+- 2026-07-28: Trigger the review skill on dashboard requests and launch the
+  installed dashboard through a detached PowerShell process.
 
 - 2026-07-28: Make `PROJECT.md` canonical and index only a stable Local RAG
   discovery pointer so documentation edits cannot leave stale semantic chunks.
@@ -322,11 +327,13 @@ for inline JavaScript.
 
 ## Completed milestone log
 
-- 2026-07-28: Reorganized the repository for the Windows 0.2.0 marketplace
+- 2026-07-28: Reorganized the repository for the Windows 0.2.1 marketplace
   release, imported maintained Local RAG source, and added shared runtime
   lifecycle tooling, documentation, automated tests, and CI.
 - 2026-07-28: Added the 30-card Imperial Russia Monarchs deck as a validated
   showcase export with 15 public source snapshots and no review history.
+- 2026-07-28: Made dashboard discovery and background launch an explicit review
+  skill capability for Claude and Codex.
 
 - 2026-07-28: Initial Semantic SRS plugin, FSRS scheduler, SQLite persistence,
   source snapshots, drafts, review sessions, correction, stats, and export.

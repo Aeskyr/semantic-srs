@@ -256,6 +256,21 @@ class DashboardAPITest(unittest.TestCase):
         self.assertIn("<code>${sourceUriHtml(s.source_uri)}</code>", script)
         self.assertNotIn("<code>${esc(s.source_uri)}</code>", script)
 
+    def test_review_skill_can_discover_and_launch_dashboard(self):
+        skill = (
+            Path(__file__).parents[1]
+            / "skills"
+            / "conduct-semantic-review"
+            / "SKILL.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("open the local dashboard", skill)
+        self.assertIn("Semantic SRS dashboard", skill)
+        self.assertIn("## Open the dashboard", skill)
+        self.assertIn("SemanticSRS\\apps\\current\\semantic-srs", skill)
+        self.assertIn("launch-dashboard.ps1", skill)
+        self.assertIn("Start-Process powershell.exe", skill)
+        self.assertIn("setup.ps1", skill)
+
     def test_sources_endpoint_includes_deck_ids_and_archived_decks_remain_listed(self):
         headers = {"Authorization": "Bearer test-token"}
         deck = self.client.get("/api/decks", headers=headers).json()[0]

@@ -13,7 +13,7 @@
    changed unexpectedly. Run uninstall with preservation, then separately in a
    disposable profile with `-PurgeData`.
 6. Confirm every README command works without undocumented steps.
-7. Merge only with a green workflow, tag the exact commit `v0.2.0`, and create a
+7. Merge only with a green workflow, tag the exact commit `v0.2.1`, and create a
    GitHub release from that tag with `CHANGELOG.md` notes.
 
 Repository publication, tag pushing, and GitHub release creation require the

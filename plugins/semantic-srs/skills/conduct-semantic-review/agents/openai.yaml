@@ -1,6 +1,6 @@
 interface:
   display_name: "Semantic SRS Review"
-  short_description: "Create decks and run meaning-based reviews"
+  short_description: "Create decks, review cards, and open the dashboard"
   default_prompt: "Use $conduct-semantic-review to start a due-card review session."
 dependencies:
   tools:

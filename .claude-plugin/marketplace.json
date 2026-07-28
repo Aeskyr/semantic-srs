@@ -3,11 +3,11 @@
   "owner": {"name": "Vitaliy", "email": "security@aeskyr.com"},
   "metadata": {
     "description": "Local conversational spaced repetition and private retrieval for Windows",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "homepage": "https://github.com/Aeskyr/semantic-srs"
   },
   "plugins": [
-    {"name": "semantic-srs", "source": "./plugins/semantic-srs", "description": "Meaning-based spaced repetition", "version": "0.2.0"},
-    {"name": "local-rag", "source": "./plugins/local-rag", "description": "Private on-device semantic retrieval", "version": "0.2.0"}
+    {"name": "semantic-srs", "source": "./plugins/semantic-srs", "description": "Meaning-based spaced repetition", "version": "0.2.1"},
+    {"name": "local-rag", "source": "./plugins/local-rag", "description": "Private on-device semantic retrieval", "version": "0.2.1"}
   ]
 }

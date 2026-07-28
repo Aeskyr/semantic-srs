@@ -4,6 +4,16 @@ __pycache__/
 
 data/*
 !data/.gitkeep
+**/data/
+*.sqlite3*
+qdrant/
+models/
+venvs/
+apps/
+backups/
+install.json
+.env
+*.token
 
 .pytest_cache/
 .coverage

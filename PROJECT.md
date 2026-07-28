@@ -2,10 +2,33 @@
 
 Last updated: 2026-07-28
 
+## Public Windows release plan
+
+Version 0.2.0 packages this project as the public MIT-licensed
+`Aeskyr/semantic-srs` marketplace repository for Windows 10/11 x64 and CPython
+3.11. The repository contains two cooperating but independently installable
+plugins: `semantic-srs` and the optional `local-rag` retrieval companion. Claude
+Code and Codex use the same learner state beneath
+`%LOCALAPPDATA%\SemanticSRS`, while application code, virtual environments,
+model caches, logs, and persistent data remain outside plugin checkouts.
+
+The release work includes portable Claude and Codex manifests, versioned
+application staging, dependency-lock-aware setup/update scripts, data-preserving
+uninstall and legacy migration, installer tests with fake host executables,
+Windows CI, public documentation, and clean-room release instructions.
+Publication, tag creation, and release creation remain pending until automated
+checks and clean Windows clone/ZIP smoke tests pass.
+
+The repository includes `showcase/imperial-russia-monarchs.json`, a portable
+Semantic SRS export with 15 public source snapshots and 30 unreviewed draft cards
+covering Imperial Russia's fourteen emperors and empresses from 1721 to 1917.
+Release validation fixes its identity and counts and rejects reviewed cards, so
+no developer learning history is shipped.
+
 ## Purpose and user experience
 
-Semantic SRS is a single-user, local spaced-repetition system where Codex remains
-the conversational review tutor. Codex creates sourced cards, varies questions,
+Semantic SRS is a single-user, local spaced-repetition system where the connected
+agent remains the conversational review tutor. It creates sourced cards, varies questions,
 judges answers by meaning, gives feedback, and submits a hidden rating. A local
 dashboard visualizes and manages the same persistent state but never grades
 answers or conducts reviews.
@@ -33,8 +56,8 @@ Dates are stored in UTC ISO 8601 form and localized only by the browser.
 
 ## Component responsibilities
 
-- Plugin: packages the review skill and MCP server and exposes them to Codex.
-- MCP: provides exact state-changing and read interfaces to Codex; it never asks
+- Plugin: packages the review skill and MCP server for Claude Code and Codex.
+- MCP: provides exact state-changing and read interfaces to the host; it never asks
   the learner to select an FSRS rating.
 - Review skill: governs source capture, draft approval, conversational question
   variation, semantic grading, follow-ups, correction, and feedback.
@@ -120,7 +143,11 @@ concepts without a redundant field label; source identifiers remain available in
 in the Sources view but are not shown in card answers. Expanded answers retain
 their open or closed state across five-second polling, manual refreshes, searches,
 filters, edits, and draft actions while their cards remain in the displayed
-result set. Cards also expose schedules, lifecycle actions, edits, and bulk
+result set. Cards are grouped under the same kind of exact deck-name disclosures
+as Sources, including active and archived decks with no matching cards. These
+deck disclosures start collapsed and independently preserve their state across
+polling, manual refreshes, searches, filters, edits, and card actions while the
+deck continues to exist. Cards also expose schedules, lifecycle actions, edits, and bulk
 actions for shown drafts. Sources group stable snapshots under an alphabetical
 list of every active and archived deck, including decks without snapshots. Each
 deck is an accessible disclosure labeled with its exact name; disclosures start
@@ -185,6 +212,17 @@ a reviewed dry run, then an apply run. Repeating an applied replay is idempotent
 
 ## Current implementation status
 
+Implemented for 0.2.0 on 2026-07-28: two-plugin public repository layout;
+synchronized Claude and Codex manifests and marketplace catalogs; portable
+PowerShell MCP launchers; versioned shared runtime staging beneath
+`%LOCALAPPDATA%\SemanticSRS`; isolated lock-hash-aware environments; optional
+Local RAG; idempotent setup/update; guarded legacy migration; data-preserving
+uninstall with explicit purge; MIT, privacy, security, contribution, changelog,
+release, backup, troubleshooting, and clean-room documentation; Local RAG mock
+tests; installer tests; release hygiene validation; and Windows GitHub Actions.
+The developer's pre-release SQLite and Qdrant stores were backed up before the
+repository restructure.
+
 Implemented on 2026-07-28: canonical documentation and agent enforcement;
 stable Local RAG discovery pointer verified against representative development
 queries;
@@ -204,6 +242,10 @@ semantic correctness. Normal reviews and grade corrections share this scheduler
 path; corrections deterministically replay the current epoch.
 Card answer disclosures use the exact `Answer` label, omit source identifiers,
 and preserve their per-card open or closed state during card-list refreshes.
+Cards are grouped by `deck_id` beneath exact deck-name disclosures, with empty
+and archived decks included and per-deck disclosure state preserved independently
+from each card's Answer disclosure. Card status pills are vertically centered
+against their card-header content.
 Source snapshots are grouped by `deck_id` beneath exact deck-name disclosures,
 with empty and archived decks included, and preserve per-deck disclosure state
 during dashboard refreshes. Redundant trailing intent labels are hidden in
@@ -214,6 +256,11 @@ wired by delegated listeners in the bundled script and require no CSP exception
 for inline JavaScript.
 
 ## Known limitations and deferred features
+
+- Public GitHub publication, the `v0.2.0` tag/release, official host CLI
+  validation, and clean Windows clone/ZIP smoke tests require external
+  authenticated hosts and remain release gates rather than locally completed
+  work.
 
 - The shared `service.py` is currently a compatibility facade over the established
   MCP module. A future cleanup may move all transport-neutral functions into it
@@ -226,6 +273,15 @@ for inline JavaScript.
   out of scope.
 
 ## Decision log
+
+- 2026-07-28: Package version 0.2.0 as two independent plugins with Local RAG
+  installed by default but omitted from hard dependencies.
+- 2026-07-28: Resolve all runtime paths from `%LOCALAPPDATA%\SemanticSRS` through
+  portable PowerShell launchers so Claude Code and Codex share learner state.
+- 2026-07-28: Preserve data by default during update and uninstall, and refuse
+  automatic migration merges when both source and destination stores are nonempty.
+- 2026-07-28: Ship the sourced Imperial Russia Monarchs deck as a validated,
+  unreviewed showcase export rather than bundling live learner data.
 
 - 2026-07-28: Make `PROJECT.md` canonical and index only a stable Local RAG
   discovery pointer so documentation edits cannot leave stale semantic chunks.
@@ -245,6 +301,9 @@ for inline JavaScript.
 - 2026-07-28: Group Sources under exact deck-name disclosures, include empty and
   archived decks, preserve source order, and retain disclosure state across
   polling and manual refreshes.
+- 2026-07-28: Group Cards under the same refresh-stable deck disclosures as
+  Sources, including empty and archived decks, while preserving Answer state
+  independently.
 - 2026-07-28: Hide a trailing `— intent` or `- intent` from source titles in the
   dashboard only; preserve immutable snapshots and API responses.
 - 2026-07-28: Make only browser-parseable HTTP and HTTPS source identifiers
@@ -263,6 +322,12 @@ for inline JavaScript.
 
 ## Completed milestone log
 
+- 2026-07-28: Reorganized the repository for the Windows 0.2.0 marketplace
+  release, imported maintained Local RAG source, and added shared runtime
+  lifecycle tooling, documentation, automated tests, and CI.
+- 2026-07-28: Added the 30-card Imperial Russia Monarchs deck as a validated
+  showcase export with 15 public source snapshots and no review history.
+
 - 2026-07-28: Initial Semantic SRS plugin, FSRS scheduler, SQLite persistence,
   source snapshots, drafts, review sessions, correction, stats, and export.
 - 2026-07-28: Canonical living-document workflow and documentation consistency
@@ -274,6 +339,8 @@ for inline JavaScript.
   across dashboard polling and other card-list rerenders.
 - 2026-07-28: Grouped source snapshots by deck with accessible, refresh-stable
   disclosures for all active and archived decks.
+- 2026-07-28: Grouped cards by deck with the same accessible, refresh-stable
+  disclosure behavior as Sources.
 - 2026-07-28: Removed redundant intent suffixes from displayed source titles
   without modifying stored source snapshots.
 - 2026-07-28: Added secure new-tab links for HTTP and HTTPS source identifiers

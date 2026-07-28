@@ -1,0 +1,21 @@
+{
+  "name": "local-rag",
+  "version": "0.2.0",
+  "description": "Private on-device semantic document retrieval",
+  "author": {"name": "Vitaliy", "url": "https://github.com/Aeskyr/semantic-srs"},
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Local RAG",
+    "shortDescription": "Search your private local document index.",
+    "longDescription": "Indexes local files with on-device embeddings and retrieves sourced excerpts from embedded Qdrant.",
+    "developerName": "Aeskyr",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": ["Show my Local RAG status.", "Index a folder in Local RAG.", "Search my local knowledge base."]
+  },
+  "mcpServers": "./.mcp.json",
+  "homepage": "https://github.com/Aeskyr/semantic-srs"
+  ,"repository": "https://github.com/Aeskyr/semantic-srs"
+  ,"license": "MIT"
+  ,"keywords": ["rag", "retrieval", "local"]
+}

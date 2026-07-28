@@ -173,7 +173,26 @@ class DashboardAPITest(unittest.TestCase):
         self.assertIn('const open=answerState.get(c.card_id)?" open":""', script)
         self.assertLess(
             script.index("captureAnswerState();"),
-            script.index("innerHTML=cards.map(cardHtml)"),
+            script.index('document.querySelector("#card-list").innerHTML=decks.map'),
+        )
+
+    def test_cards_are_grouped_by_deck_and_preserve_disclosure_state(self):
+        script = (Path(__file__).parents[1] / "web" / "app.js").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("const cardDeckState=new Map()", script)
+        self.assertIn("cards.forEach(c=>{if(grouped.has(c.deck_id))", script)
+        self.assertIn('<details class="card-deck" data-deck-id="${esc(d.id)}"', script)
+        self.assertIn('<summary>${esc(d.name)}</summary><div class="card-items">', script)
+        self.assertIn("captureCardDeckState()", script)
+        self.assertIn("cardDeckState.set(x.dataset.deckId,x.open)", script)
+        self.assertIn('cardDeckState.get(d.id)?" open":""', script)
+        self.assertIn("if(!currentDecks.has(id))cardDeckState.delete(id)", script)
+        self.assertIn("No cards match.", script)
+        self.assertNotIn('<details class="card-deck" open', script)
+        self.assertIn(
+            "await loadDecks();await Promise.all([loadOverview(),loadCards()",
+            script,
         )
 
     def test_dynamic_actions_do_not_require_inline_script_csp(self):
@@ -215,9 +234,10 @@ class DashboardAPITest(unittest.TestCase):
             script,
         )
         self.assertIn("${esc(sourceTitle(s))}", script)
-        self.assertLess(
-            script.index("await loadDecks();"),
-            script.index("await loadSources()"),
+        self.assertIn(
+            "await loadDecks();await Promise.all([loadOverview(),loadCards(),"
+            "loadHistory(),loadSources()])",
+            script,
         )
 
     def test_web_source_uris_are_secure_links_with_plain_text_fallback(self):

@@ -1,16 +1,17 @@
 {
   "name": "semantic-srs",
-  "version": "0.1.0+codex.20260728171449",
+  "version": "0.2.0",
   "description": "Meaning-based spaced repetition with conversational grading and FSRS scheduling",
   "author": {
-    "name": "Local developer"
+    "name": "Vitaliy",
+    "url": "https://github.com/Aeskyr/semantic-srs"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Semantic SRS",
     "shortDescription": "Conversational reviews graded by meaning.",
     "longDescription": "Create sourced study decks, approve draft cards, answer varied questions naturally, and let deterministic FSRS scheduling maintain review dates and statistics.",
-    "developerName": "Local developer",
+    "developerName": "Aeskyr",
     "category": "Productivity",
     "capabilities": [
       "Read",
@@ -23,5 +24,9 @@
       "Start a due-card review session."
     ]
   },
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "homepage": "https://github.com/Aeskyr/semantic-srs"
+  ,"repository": "https://github.com/Aeskyr/semantic-srs"
+  ,"license": "MIT"
+  ,"keywords": ["spaced-repetition", "fsrs", "learning"]
 }

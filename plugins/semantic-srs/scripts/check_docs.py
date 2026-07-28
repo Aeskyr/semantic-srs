@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SERVER = ROOT / "server.py"
-PROJECT = ROOT / "PROJECT.md"
+PROJECT = ROOT.parents[1] / "PROJECT.md"
 REQUIRED_SECTIONS = {
     "Purpose and user experience",
     "Architecture and data flow",

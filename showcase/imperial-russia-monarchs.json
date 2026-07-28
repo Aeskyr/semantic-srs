@@ -1,0 +1,1601 @@
+{
+  "format": "semantic-srs-export",
+  "version": 1,
+  "exported_at": "2026-07-28T19:03:13.541736+00:00",
+  "deck": {
+    "id": "deck_dea4da7a84944292ab9723247b1081a5",
+    "name": "Imperial Russia Monarchs",
+    "description": "Thirty sourced semantic-recall cards covering all fourteen emperors and empresses of Imperial Russia from Peter I taking the imperial title in 1721 through Nicholas II's abdication in 1917.",
+    "created_at": "2026-07-28T18:35:18.386102+00:00",
+    "updated_at": "2026-07-28T18:35:18.386102+00:00",
+    "status": "active",
+    "version": 0
+  },
+  "sources": [
+    {
+      "id": "src_f62276cb6b78495eb834c63ba6bcc26f",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/19/46/77/92/2019467792/2019467792.pdf",
+      "title": "Library of Congress ? Romanov reign chronology",
+      "excerpt": "The imperial sequence begins with Peter I, who adopted the title emperor in 1721 after victory in the Great Northern War. It ends with Nicholas II, who abdicated during the February Revolution in March 1917; the Bolshevik seizure of power followed later that year.",
+      "content_hash": "9796cf9c39ade7457434c3a9d04eb8d8c848118a8f7e3a0bd1330ebf99871d55",
+      "created_at": "2026-07-28T18:35:18.396264+00:00"
+    },
+    {
+      "id": "src_c85f9e4286f443d182460ec8cf220937",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Peter-the-Great",
+      "title": "Encyclopaedia Britannica ? Peter I",
+      "excerpt": "Peter I took the title emperor in 1721 after Russia defeated Sweden in the Great Northern War. He reorganized government and the military, promoted Western methods and customs, and made St. Petersburg the new capital.",
+      "content_hash": "80ef30ef134df111cd3fd963d297325a3a072ef964e28c3d473e967a270cfc49",
+      "created_at": "2026-07-28T18:35:18.403030+00:00"
+    },
+    {
+      "id": "src_b59f1e82977d4f84a98b96be9f291d06",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Catherine-I-empress-of-Russia",
+      "title": "Encyclopaedia Britannica ? Catherine I",
+      "excerpt": "Catherine I, Peter I?s widow, succeeded him in 1725 and became the first woman to rule Imperial Russia in her own right. During her short reign, much power was exercised through Alexander Menshikov and the Supreme Privy Council.",
+      "content_hash": "45795dd9724daf4e9e96a51fd3f6cfd9601b23ffef222460b81aa7d9b3afd706",
+      "created_at": "2026-07-28T18:35:18.409363+00:00"
+    },
+    {
+      "id": "src_e81b2a7f17534b3f9f0498685e4d6520",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Peter-II-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Peter II",
+      "excerpt": "Peter II, a grandson of Peter I, became emperor as a boy in 1727. Court factions dominated his reign; he died of smallpox in 1730 and was the last male-line descendant of the original Romanov dynasty.",
+      "content_hash": "cf7c2c1acd30f1cdc429fb5acc3474979d81ae3f59a1cadbcf56616efed2692f",
+      "created_at": "2026-07-28T18:35:18.415041+00:00"
+    },
+    {
+      "id": "src_dc5f59cde0f94ea3bc89a68ccaf0a780",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Anna-empress-of-Russia",
+      "title": "Encyclopaedia Britannica ? Anna",
+      "excerpt": "Anna, daughter of Ivan V, was offered the throne in 1730 under ?Conditions? intended to limit her power. After arriving in Moscow she repudiated the Conditions and restored unrestricted autocratic authority.",
+      "content_hash": "92a5345e0c5d035197657c2a7d7c851c9dcc1bc046d735ef825237823ecf6560",
+      "created_at": "2026-07-28T18:35:18.420867+00:00"
+    },
+    {
+      "id": "src_b9124581ab7147c6909bd26976cacb4c",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Ivan-VI-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Ivan VI",
+      "excerpt": "Ivan VI was proclaimed emperor as an infant in 1740 under regents. Elizabeth overthrew the regency in a 1741 coup, and Ivan spent nearly all the rest of his life imprisoned before being killed during an attempted rescue.",
+      "content_hash": "42a64cfbd3e0fdd860d1d3d1f35014150e99161863b3425eceb52dfbd7a0819a",
+      "created_at": "2026-07-28T18:35:18.426870+00:00"
+    },
+    {
+      "id": "src_fcdcd20c7bf54ecfaa46829ac57f1a42",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Elizabeth-empress-of-Russia",
+      "title": "Encyclopaedia Britannica ? Elizabeth",
+      "excerpt": "Elizabeth, daughter of Peter I, seized the throne from Ivan VI?s regency in 1741. Her reign supported Russian culture and education, including the founding of Moscow University in 1755, and involved Russia deeply in the Seven Years? War.",
+      "content_hash": "a085f6591fb010ded888a0cd915e9f8ef6e37f635f8091d9923144ef81ccef29",
+      "created_at": "2026-07-28T18:35:18.433351+00:00"
+    },
+    {
+      "id": "src_6ac1bb1a32ec40948a87a57b629389ff",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Peter-III-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Peter III",
+      "excerpt": "Peter III ruled for about six months in 1762. He ended Russia?s war against Frederick II of Prussia and aligned with Prussia, alienating important elites; a guards coup placed his wife Catherine on the throne.",
+      "content_hash": "0315ec0e77c6b340ca62e55b68379c9dd85e1530fc3b8de8c42e1e7183a80277",
+      "created_at": "2026-07-28T18:35:18.439649+00:00"
+    },
+    {
+      "id": "src_5678a83247d94b8e8ac657d3afc23d49",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Catherine-the-Great",
+      "title": "Encyclopaedia Britannica ? Catherine II",
+      "excerpt": "Catherine II took power after the overthrow of Peter III and ruled as an enlightened absolutist. Russia expanded toward the Black Sea, annexed Crimea in 1783, and participated in the partitions of Poland, while serfdom remained entrenched.",
+      "content_hash": "3e12bc1747c8ff521477d7aae85022a939130f2b307c7bc4143e017315a4d28c",
+      "created_at": "2026-07-28T18:35:18.446659+00:00"
+    },
+    {
+      "id": "src_ff0e788f11694561aebef1b9d8cd640e",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Paul-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Paul I",
+      "excerpt": "Paul I, son and successor of Catherine II, issued the 1797 succession law establishing a regular hereditary order based on male-preference primogeniture. His erratic rule alienated elites, and conspirators assassinated him in 1801.",
+      "content_hash": "e34ebf6562b0c92d8905366584000a3d77c18ce6c9ffcf8e9ae2a0f3e6fe9c45",
+      "created_at": "2026-07-28T18:35:18.453896+00:00"
+    },
+    {
+      "id": "src_7dbc1f78869a435a9718ae6d1a4dcdee",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Alexander-I-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Alexander I",
+      "excerpt": "Alexander I ruled during Napoleon?s 1812 invasion. Russia?s armies helped defeat Napoleon and entered Paris; Alexander then played a leading role at the Congress of Vienna and promoted the Holy Alliance.",
+      "content_hash": "fad59173fe2590accb777abded8bdeabb2f22c50f3aa9701b8f74328879d3ed4",
+      "created_at": "2026-07-28T18:35:18.459483+00:00"
+    },
+    {
+      "id": "src_1355a5d2dafe4a8c86a3319c39d67555",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Nicholas-I-tsar-of-Russia",
+      "title": "Encyclopaedia Britannica ? Nicholas I",
+      "excerpt": "Nicholas I came to the throne amid the Decembrist revolt of 1825 and built a conservative autocracy associated with ?Orthodoxy, Autocracy, and Nationality.? His reign ended during the Crimean War, which exposed serious weaknesses in the empire.",
+      "content_hash": "1a6746903d7c55871dc257bf545082ff6fcf8f16e4368815cc991eb3246f41bc",
+      "created_at": "2026-07-28T18:35:18.465990+00:00"
+    },
+    {
+      "id": "src_92d7c40132834502976ffcd641602fe0",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Alexander-II-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Alexander II",
+      "excerpt": "Alexander II emancipated Russia?s serfs in 1861 and pursued Great Reforms affecting local government, courts, the military, and education. Members of the revolutionary organization People?s Will assassinated him in 1881.",
+      "content_hash": "3f0ec4a6f690da1336dcba3809fe1f5b185e42e3e4b555aff14e7d7ba80b8af0",
+      "created_at": "2026-07-28T18:35:18.473151+00:00"
+    },
+    {
+      "id": "src_5654152cb6d742348dd5ae442d1394ad",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Alexander-III-emperor-of-Russia",
+      "title": "Encyclopaedia Britannica ? Alexander III",
+      "excerpt": "Alexander III reacted to his father?s assassination with political counter-reforms, strengthened autocratic control, and promoted Russification. His reign also coincided with rapid industrial and railway development.",
+      "content_hash": "35c2bee91ef9539747b19a1cf8199106b2dcf4f812a3baccd99db026e9c4e817",
+      "created_at": "2026-07-28T18:35:18.479436+00:00"
+    },
+    {
+      "id": "src_f39c5f33aa12464db1934591ac77a0cf",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "source_uri": "https://www.britannica.com/biography/Nicholas-II-tsar-of-Russia",
+      "title": "Encyclopaedia Britannica ? Nicholas II",
+      "excerpt": "Nicholas II was the final Russian emperor. The 1905 Revolution forced concessions including an elected Duma, but autocracy persisted; military and social crisis during World War I culminated in the February Revolution and his abdication in March 1917.",
+      "content_hash": "7b43c85e3cb168c9d61bc2f553218fc5c5e7f36b5598f751aeb0d39a04a6be58",
+      "created_at": "2026-07-28T18:35:18.485944+00:00"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_5fd146d1c9794a4cb422f3dc6fba1ebd",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Peter I from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1721?1725 as emperor, following the Russian tsardom under Peter himself and preceding Catherine I?",
+      "due_at": "2026-07-28T18:35:18.493898+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.493898+00:00",
+      "updated_at": "2026-07-28T18:35:18.493898+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Peter I"
+      ],
+      "acceptable_answers": [
+        "Peter I",
+        "Peter the Great"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Peter I.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_c85f9e4286f443d182460ec8cf220937",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718492,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.493898+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718492,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.493898+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_4f2efda2a2984d4e96bff9397a5c299a",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Peter I",
+      "suggested_question": "What most clearly defines Peter I?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.501994+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.501994+00:00",
+      "updated_at": "2026-07-28T18:35:18.501994+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Victory in the Great Northern War enabled the 1721 imperial title.",
+        "He transformed the state and military through westernizing reforms.",
+        "St. Petersburg symbolized Russia?s new European orientation."
+      ],
+      "acceptable_answers": [
+        "He founded the Russian Empire after defeating Sweden and modernized the army, administration, and culture.",
+        "Peter the Great westernized state institutions and built St. Petersburg after the Great Northern War."
+      ],
+      "misconceptions": [
+        "He began ruling Russia only in 1721; he had already ruled as tsar.",
+        "He founded Moscow as the imperial capital."
+      ],
+      "source_ids": [
+        "src_c85f9e4286f443d182460ec8cf220937"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718500,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.501994+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718500,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.501994+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_d2bc26c8ce164a739eee2c0524432458",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Catherine I from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1725?1727, following Peter I and preceding Peter II?",
+      "due_at": "2026-07-28T18:35:18.509645+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.509645+00:00",
+      "updated_at": "2026-07-28T18:35:18.509645+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Catherine I"
+      ],
+      "acceptable_answers": [
+        "Catherine I",
+        "Yekaterina I"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Catherine I.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_b59f1e82977d4f84a98b96be9f291d06",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718508,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.509645+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718508,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.509645+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_497770286a2b4069a3593fccc34e5d0f",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Catherine I",
+      "suggested_question": "What most clearly defines Catherine I?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.518158+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.518158+00:00",
+      "updated_at": "2026-07-28T18:35:18.518158+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "She was Peter I?s widow and successor.",
+        "She was the first woman to rule Imperial Russia in her own right.",
+        "The Supreme Privy Council and Menshikov exercised substantial influence."
+      ],
+      "acceptable_answers": [
+        "Peter the Great?s widow became Russia?s first ruling empress, while Menshikov and the Privy Council dominated government."
+      ],
+      "misconceptions": [
+        "She was Catherine the Great.",
+        "She inherited the throne as Peter I?s daughter."
+      ],
+      "source_ids": [
+        "src_b59f1e82977d4f84a98b96be9f291d06"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718516,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.518158+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718516,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.518158+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_faff9a4db0e34bba938c57ada0318d64",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Peter II from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1727?1730, following Catherine I and preceding Anna?",
+      "due_at": "2026-07-28T18:35:18.526255+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.526255+00:00",
+      "updated_at": "2026-07-28T18:35:18.526255+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Peter II"
+      ],
+      "acceptable_answers": [
+        "Peter II"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Peter II.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_e81b2a7f17534b3f9f0498685e4d6520",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718524,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.526255+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718524,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.526255+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_20a116484e024aa69ff828cc968823ab",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Peter II",
+      "suggested_question": "What most clearly defines Peter II?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.533839+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.533839+00:00",
+      "updated_at": "2026-07-28T18:35:18.533839+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "He was Peter I?s grandson and a child ruler.",
+        "Court factions dominated his short reign.",
+        "His death ended the direct male Romanov line."
+      ],
+      "acceptable_answers": [
+        "Peter I?s young grandson was controlled by court factions and died in 1730 as the last male-line Romanov."
+      ],
+      "misconceptions": [
+        "He was Peter I?s son.",
+        "His death ended the monarchy."
+      ],
+      "source_ids": [
+        "src_e81b2a7f17534b3f9f0498685e4d6520"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718532,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.533839+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718532,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.533839+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_b86af46f1fe8465abc43883e23ab9932",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Anna from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1730?1740, following Peter II and preceding Ivan VI?",
+      "due_at": "2026-07-28T18:35:18.541831+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.541831+00:00",
+      "updated_at": "2026-07-28T18:35:18.541831+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Anna"
+      ],
+      "acceptable_answers": [
+        "Anna",
+        "Anna Ivanovna",
+        "Anne of Russia"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Anna.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_dc5f59cde0f94ea3bc89a68ccaf0a780",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718539,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.541831+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718539,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.541831+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_9c520295ea0e41348753a7a37aaddf88",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Anna",
+      "suggested_question": "What most clearly defines Anna?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.549367+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.549367+00:00",
+      "updated_at": "2026-07-28T18:35:18.549367+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The Supreme Privy Council offered her the throne under restrictive Conditions.",
+        "She repudiated the Conditions.",
+        "Her action preserved imperial autocracy."
+      ],
+      "acceptable_answers": [
+        "Anna accepted and then destroyed the Conditions that would have limited her, restoring autocratic rule."
+      ],
+      "misconceptions": [
+        "She established a constitutional monarchy.",
+        "She was Peter I?s daughter."
+      ],
+      "source_ids": [
+        "src_dc5f59cde0f94ea3bc89a68ccaf0a780"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718547,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.549367+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718547,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.549367+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_92170cf40b424ad7ab41d98a8b7e9774",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Ivan VI from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1740?1741, following Anna and preceding Elizabeth?",
+      "due_at": "2026-07-28T18:35:18.557541+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.557541+00:00",
+      "updated_at": "2026-07-28T18:35:18.557541+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Ivan VI"
+      ],
+      "acceptable_answers": [
+        "Ivan VI",
+        "Ivan Antonovich"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Ivan VI.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_b9124581ab7147c6909bd26976cacb4c",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718555,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.557541+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718555,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.557541+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_e35bad1346c343c2b4e706dc82f82c66",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Ivan VI",
+      "suggested_question": "What most clearly defines Ivan VI?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.564504+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.564504+00:00",
+      "updated_at": "2026-07-28T18:35:18.564504+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "He became emperor as an infant under a regency.",
+        "Elizabeth deposed him in the coup of 1741.",
+        "He was imprisoned for the remainder of his life and killed during a rescue attempt."
+      ],
+      "acceptable_answers": [
+        "The infant emperor was overthrown by Elizabeth, kept imprisoned, and later killed during an attempt to free him."
+      ],
+      "misconceptions": [
+        "He voluntarily abdicated as an adult.",
+        "Catherine II deposed him directly."
+      ],
+      "source_ids": [
+        "src_b9124581ab7147c6909bd26976cacb4c"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718562,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.564504+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718562,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.564504+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_735e04b36aa348f9b0b2525f595fc7e9",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Elizabeth from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1741?1762, following Ivan VI and preceding Peter III?",
+      "due_at": "2026-07-28T18:35:18.572015+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.572015+00:00",
+      "updated_at": "2026-07-28T18:35:18.572015+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Elizabeth"
+      ],
+      "acceptable_answers": [
+        "Elizabeth",
+        "Elizabeth Petrovna",
+        "Elizaveta"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Elizabeth.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_fcdcd20c7bf54ecfaa46829ac57f1a42",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718570,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.572015+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718570,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.572015+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_69b16b8bf62b44e6a37822ddfb15d0bd",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Elizabeth",
+      "suggested_question": "What most clearly defines Elizabeth?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.579796+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.579796+00:00",
+      "updated_at": "2026-07-28T18:35:18.579796+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "She was Peter I?s daughter and took power in the 1741 coup.",
+        "Her reign patronized education and culture, including Moscow University.",
+        "Russia fought Prussia in the Seven Years? War."
+      ],
+      "acceptable_answers": [
+        "Peter the Great?s daughter seized power in 1741, promoted education, and fought against Prussia in the Seven Years? War."
+      ],
+      "misconceptions": [
+        "She was Peter III?s wife.",
+        "She kept Russia neutral in the Seven Years? War."
+      ],
+      "source_ids": [
+        "src_fcdcd20c7bf54ecfaa46829ac57f1a42"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718578,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.579796+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718578,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.579796+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_ada02b2563d648d0a78c013073161e30",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Peter III from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1762, following Elizabeth and preceding Catherine II?",
+      "due_at": "2026-07-28T18:35:18.587308+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.587308+00:00",
+      "updated_at": "2026-07-28T18:35:18.587308+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Peter III"
+      ],
+      "acceptable_answers": [
+        "Peter III",
+        "Pyotr III"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Peter III.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_6ac1bb1a32ec40948a87a57b629389ff",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718585,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.587308+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718585,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.587308+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_6548c92c87ff409d801955491274ee88",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Peter III",
+      "suggested_question": "What most clearly defines Peter III?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.594675+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.594675+00:00",
+      "updated_at": "2026-07-28T18:35:18.594675+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "He ended Russia?s participation against Prussia in the Seven Years? War.",
+        "His pro-Prussian policy alienated influential elites.",
+        "A guards coup deposed him in favor of his wife Catherine."
+      ],
+      "acceptable_answers": [
+        "His rapid peace and alliance with Prussia helped undermine him, and Catherine took power in a coup."
+      ],
+      "misconceptions": [
+        "He defeated and annexed Prussia.",
+        "He peacefully transferred power after a long reign."
+      ],
+      "source_ids": [
+        "src_6ac1bb1a32ec40948a87a57b629389ff"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718593,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.594675+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718593,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.594675+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_1151382f30744ac9ba53afad8a130fdc",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Catherine II from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1762?1796, following Peter III and preceding Paul I?",
+      "due_at": "2026-07-28T18:35:18.601708+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.601708+00:00",
+      "updated_at": "2026-07-28T18:35:18.601708+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Catherine II"
+      ],
+      "acceptable_answers": [
+        "Catherine II",
+        "Catherine the Great",
+        "Yekaterina II"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Catherine II.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_5678a83247d94b8e8ac657d3afc23d49",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718600,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.601708+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718600,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.601708+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_cfd575ab0e614ccd938da2058bd34166",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Catherine II",
+      "suggested_question": "What most clearly defines Catherine II?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.609291+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.609291+00:00",
+      "updated_at": "2026-07-28T18:35:18.609291+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "She claimed Enlightenment ideals while retaining autocratic rule.",
+        "Her reign expanded Russia toward the Black Sea and annexed Crimea.",
+        "Russia gained territory in the partitions of Poland."
+      ],
+      "acceptable_answers": [
+        "Catherine the Great combined enlightened absolutism with major expansion into Crimea, the Black Sea region, and partitioned Poland."
+      ],
+      "misconceptions": [
+        "She abolished Russian serfdom.",
+        "She inherited the throne as Peter III?s blood heir."
+      ],
+      "source_ids": [
+        "src_5678a83247d94b8e8ac657d3afc23d49"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718606,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.609291+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718606,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.609291+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_96c7dfdb8ee146498253310626b63fd8",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Paul I from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1796?1801, following Catherine II and preceding Alexander I?",
+      "due_at": "2026-07-28T18:35:18.617291+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.617291+00:00",
+      "updated_at": "2026-07-28T18:35:18.617291+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Paul I"
+      ],
+      "acceptable_answers": [
+        "Paul I",
+        "Pavel I"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Paul I.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_ff0e788f11694561aebef1b9d8cd640e",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718615,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.617291+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718615,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.617291+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_0ee0cff773eb4d5499c1f7c9b9943363",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Paul I",
+      "suggested_question": "What most clearly defines Paul I?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.624755+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.624755+00:00",
+      "updated_at": "2026-07-28T18:35:18.624755+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The 1797 law replaced discretionary succession with male-preference primogeniture.",
+        "The law aimed to prevent another succession like Catherine II?s seizure of power.",
+        "Paul was assassinated in a palace conspiracy in 1801."
+      ],
+      "acceptable_answers": [
+        "Paul fixed succession by male-preference primogeniture and was later killed in a palace coup."
+      ],
+      "misconceptions": [
+        "He introduced elective monarchy.",
+        "He abdicated peacefully in favor of Alexander I."
+      ],
+      "source_ids": [
+        "src_ff0e788f11694561aebef1b9d8cd640e"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718623,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.624755+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718623,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.624755+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_c740319ab8334f148a28718e5a7a2883",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Alexander I from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1801?1825, following Paul I and preceding Nicholas I?",
+      "due_at": "2026-07-28T18:35:18.632266+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.632266+00:00",
+      "updated_at": "2026-07-28T18:35:18.632266+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Alexander I"
+      ],
+      "acceptable_answers": [
+        "Alexander I",
+        "Aleksandr I"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Alexander I.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_7dbc1f78869a435a9718ae6d1a4dcdee",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718630,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.632266+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718630,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.632266+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_82a274b58cc5450cb74bf2e7bdadbdb6",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Alexander I",
+      "suggested_question": "What most clearly defines Alexander I?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.640369+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.640369+00:00",
+      "updated_at": "2026-07-28T18:35:18.640369+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Russia survived Napoleon?s invasion of 1812 and helped defeat him.",
+        "Alexander became a major architect of the post-Napoleonic settlement.",
+        "He promoted the Holy Alliance."
+      ],
+      "acceptable_answers": [
+        "He led Russia through the defeat of Napoleon and shaped the Congress of Vienna settlement and Holy Alliance."
+      ],
+      "misconceptions": [
+        "Napoleon permanently conquered Russia under Alexander.",
+        "Alexander created the Soviet alliance system."
+      ],
+      "source_ids": [
+        "src_7dbc1f78869a435a9718ae6d1a4dcdee"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718638,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.640369+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718638,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.640369+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_52da8de03dae4e71ba844de8e39f713a",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Nicholas I from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1825?1855, following Alexander I and preceding Alexander II?",
+      "due_at": "2026-07-28T18:35:18.647670+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.647670+00:00",
+      "updated_at": "2026-07-28T18:35:18.647670+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Nicholas I"
+      ],
+      "acceptable_answers": [
+        "Nicholas I",
+        "Nikolai I"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Nicholas I.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_1355a5d2dafe4a8c86a3319c39d67555",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718646,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.647670+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718646,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.647670+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_34c1c7c60dbb40d4ac80dd6b3dc54d3a",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Nicholas I",
+      "suggested_question": "What most clearly defines Nicholas I?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.654505+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.654505+00:00",
+      "updated_at": "2026-07-28T18:35:18.654505+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The Decembrist revolt marked his accession.",
+        "His regime emphasized Orthodoxy, Autocracy, and Nationality.",
+        "The Crimean War exposed Russia?s military and administrative weaknesses."
+      ],
+      "acceptable_answers": [
+        "Nicholas suppressed the Decembrists, enforced conservative autocracy, and died during the failing Crimean War."
+      ],
+      "misconceptions": [
+        "He emancipated the serfs in 1861.",
+        "He was a constitutional liberal."
+      ],
+      "source_ids": [
+        "src_1355a5d2dafe4a8c86a3319c39d67555"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718653,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.654505+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718653,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.654505+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_9ff62a1c88904f4084764169bdcee3c1",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Alexander II from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1855?1881, following Nicholas I and preceding Alexander III?",
+      "due_at": "2026-07-28T18:35:18.662717+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.662717+00:00",
+      "updated_at": "2026-07-28T18:35:18.662717+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Alexander II"
+      ],
+      "acceptable_answers": [
+        "Alexander II",
+        "Aleksandr II",
+        "the Tsar Liberator"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Alexander II.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_92d7c40132834502976ffcd641602fe0",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718661,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.662717+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718661,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.662717+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_9a2cf3b52d614b1db2f85974e2507b95",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Alexander II",
+      "suggested_question": "What most clearly defines Alexander II?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.671677+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.671677+00:00",
+      "updated_at": "2026-07-28T18:35:18.671677+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The 1861 emancipation ended the legal bondage of the serfs.",
+        "His Great Reforms also changed courts, local government, and the military.",
+        "People?s Will assassinated him in 1881."
+      ],
+      "acceptable_answers": [
+        "The Tsar Liberator freed the serfs and modernized institutions but was assassinated by People?s Will."
+      ],
+      "misconceptions": [
+        "Emancipation immediately gave every peasant free land without obligations.",
+        "Bolsheviks assassinated him during the 1917 Revolution."
+      ],
+      "source_ids": [
+        "src_92d7c40132834502976ffcd641602fe0"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718670,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.671677+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718670,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.671677+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_05bd236b84504d40b7c0f3323a08c565",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Alexander III from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1881?1894, following Alexander II and preceding Nicholas II?",
+      "due_at": "2026-07-28T18:35:18.681011+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.681011+00:00",
+      "updated_at": "2026-07-28T18:35:18.681011+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Alexander III"
+      ],
+      "acceptable_answers": [
+        "Alexander III",
+        "Aleksandr III"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Alexander III.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_5654152cb6d742348dd5ae442d1394ad",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718679,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.681011+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718679,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.681011+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_12b905e2b2ba4c7a810f1890790aca29",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Alexander III",
+      "suggested_question": "What most clearly defines Alexander III?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.688793+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.688793+00:00",
+      "updated_at": "2026-07-28T18:35:18.688793+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "He reversed or restricted parts of Alexander II?s reform program.",
+        "He strengthened autocracy and promoted Russification.",
+        "Industrialization and railway construction accelerated during his reign."
+      ],
+      "acceptable_answers": [
+        "He answered his father?s assassination with counter-reforms and Russification while industrial growth accelerated."
+      ],
+      "misconceptions": [
+        "He expanded representative democracy.",
+        "He was assassinated by People?s Will."
+      ],
+      "source_ids": [
+        "src_5654152cb6d742348dd5ae442d1394ad"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718687,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.688793+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718687,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.688793+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_5fbfb2508178482f9e4d3d53228d6f98",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Identify Nicholas II from reign and succession context",
+      "suggested_question": "Which imperial Russian monarch ruled 1894?1917, following Alexander III and preceding no imperial successor?",
+      "due_at": "2026-07-28T18:35:18.695738+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.695738+00:00",
+      "updated_at": "2026-07-28T18:35:18.695738+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Nicholas II"
+      ],
+      "acceptable_answers": [
+        "Nicholas II",
+        "Nikolai II"
+      ],
+      "misconceptions": [
+        "Naming a neighboring ruler instead of Nicholas II.",
+        "Giving only the dynasty or title without identifying the monarch."
+      ],
+      "source_ids": [
+        "src_f39c5f33aa12464db1934591ac77a0cf",
+        "src_f62276cb6b78495eb834c63ba6bcc26f"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718694,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.695738+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718694,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.695738+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_7bf2f79729d840c99e5f41c1260611d1",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain the defining historical significance of Nicholas II",
+      "suggested_question": "What most clearly defines Nicholas II?s place in the history of Imperial Russia?",
+      "due_at": "2026-07-28T18:35:18.704091+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.704091+00:00",
+      "updated_at": "2026-07-28T18:35:18.704091+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The 1905 Revolution produced the October Manifesto and Duma without ending autocracy.",
+        "World War I intensified military, economic, and political crisis.",
+        "He abdicated during the February Revolution, ending the monarchy."
+      ],
+      "acceptable_answers": [
+        "The last emperor conceded a Duma after 1905, but wartime collapse led to his abdication in the February Revolution of 1917."
+      ],
+      "misconceptions": [
+        "The October 1917 Bolshevik seizure directly forced his abdication.",
+        "He was immediately succeeded by a crowned emperor."
+      ],
+      "source_ids": [
+        "src_f39c5f33aa12464db1934591ac77a0cf"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718702,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.704091+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718702,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.704091+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_89f5f5b5513c4e609a28ca08afefabb3",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain why 1721 marks the beginning of Imperial Russia",
+      "suggested_question": "Why is 1721 used as the starting point of the Russian Empire, even though Peter I had ruled before then?",
+      "due_at": "2026-07-28T18:35:18.712681+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.712681+00:00",
+      "updated_at": "2026-07-28T18:35:18.712681+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "Russia?s victory in the Great Northern War changed its European position.",
+        "Peter I adopted the title emperor in 1721.",
+        "The change marked the formal transition from tsardom to empire, not the beginning of Peter?s rule."
+      ],
+      "acceptable_answers": [
+        "After defeating Sweden, Peter took the imperial title in 1721, formally turning the tsardom into the Russian Empire.",
+        "1721 marks the new imperial title and state status, not Peter?s accession."
+      ],
+      "misconceptions": [
+        "Peter first became ruler in 1721.",
+        "The empire began when St. Petersburg was founded in 1703."
+      ],
+      "source_ids": [
+        "src_f62276cb6b78495eb834c63ba6bcc26f",
+        "src_c85f9e4286f443d182460ec8cf220937"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718711,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.712681+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718711,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.712681+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    },
+    {
+      "id": "card_0847ca9a352f42e3b775e5142a440064",
+      "deck_id": "deck_dea4da7a84944292ab9723247b1081a5",
+      "status": "draft",
+      "learning_objective": "Explain how and when the Russian monarchy ended in 1917",
+      "suggested_question": "Which event ended the Russian monarchy in 1917, and why is attributing it directly to the Bolshevik October Revolution inaccurate?",
+      "due_at": "2026-07-28T18:35:18.720139+00:00",
+      "version": 0,
+      "review_count": 0,
+      "lapse_count": 0,
+      "created_at": "2026-07-28T18:35:18.720139+00:00",
+      "updated_at": "2026-07-28T18:35:18.720139+00:00",
+      "scheduling_epoch": 0,
+      "required_concepts": [
+        "The February Revolution created the immediate crisis that forced abdication.",
+        "Nicholas II abdicated in March 1917, ending imperial rule.",
+        "The Bolshevik seizure of power occurred later, in the October Revolution."
+      ],
+      "acceptable_answers": [
+        "Nicholas II abdicated during the February Revolution; the Bolsheviks took power only later in October.",
+        "The monarchy ended with the March abdication, months before the Bolshevik revolution."
+      ],
+      "misconceptions": [
+        "The Bolsheviks directly forced Nicholas II to abdicate in October 1917.",
+        "The monarchy continued until Nicholas II was killed in 1918."
+      ],
+      "source_ids": [
+        "src_f62276cb6b78495eb834c63ba6bcc26f",
+        "src_f39c5f33aa12464db1934591ac77a0cf"
+      ],
+      "initial_fsrs": {
+        "card_id": 1785263718718,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.720139+00:00",
+        "last_review": null
+      },
+      "fsrs": {
+        "card_id": 1785263718718,
+        "state": 1,
+        "step": 0,
+        "stability": null,
+        "difficulty": null,
+        "due": "2026-07-28T18:35:18.720139+00:00",
+        "last_review": null
+      },
+      "reviews": []
+    }
+  ]
+}

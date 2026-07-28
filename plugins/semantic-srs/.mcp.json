@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "semantic-srs": {
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "& (Join-Path $env:LOCALAPPDATA 'SemanticSRS\\apps\\current\\semantic-srs\\launcher.ps1')"]
+    }
+  }
+}

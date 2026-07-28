@@ -5,9 +5,10 @@ description: Create and maintain sourced spaced-repetition decks, approve genera
 
 # Conduct Semantic Review
 
-Use the `semantic-srs` MCP tools as the sole authority for cards, history, versions,
-and due dates. Use Local RAG when available to retrieve source excerpts; store every
-excerpt used for a card with `srs_add_source_snapshot`.
+Use the `semantic-srs` MCP tools as the sole authority for cards, history,
+versions, and due dates. Prefer Local RAG when its tools are available; otherwise
+use pasted text or readable files. Store every excerpt used for a card with
+`srs_add_source_snapshot`.
 
 Read [grading.md](references/grading.md) before grading the first answer in a session.
 

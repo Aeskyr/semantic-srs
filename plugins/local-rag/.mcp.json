@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "local-rag": {
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "& (Join-Path $env:LOCALAPPDATA 'SemanticSRS\\apps\\current\\local-rag\\launcher.ps1')"]
+    }
+  }
+}

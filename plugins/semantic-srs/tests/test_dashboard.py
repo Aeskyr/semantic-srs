@@ -116,6 +116,12 @@ class DashboardServiceTest(unittest.TestCase):
         port = available_port()
         self.assertGreaterEqual(port, 8765)
 
+    def test_launcher_flushes_tokenized_url_for_wrappers(self):
+        launcher = (
+            Path(__file__).parents[1] / "launch_dashboard.py"
+        ).read_text(encoding="utf-8")
+        self.assertIn('print(f"Semantic SRS dashboard: {url}", flush=True)', launcher)
+
 
 class DashboardAPITest(unittest.TestCase):
     @classmethod

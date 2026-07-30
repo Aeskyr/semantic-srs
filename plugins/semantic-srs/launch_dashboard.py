@@ -26,7 +26,7 @@ def main() -> None:
     os.environ["SEMANTIC_SRS_DASHBOARD_PORT"] = str(port)
     os.environ["SEMANTIC_SRS_DASHBOARD_TOKEN"] = token
     url = f"http://127.0.0.1:{port}/?token={token}"
-    print(f"Semantic SRS dashboard: {url}")
+    print(f"Semantic SRS dashboard: {url}", flush=True)
     print("Press Ctrl+C to stop.")
     threading.Timer(0.8, webbrowser.open, args=(url,)).start()
     uvicorn.run("dashboard:app", host="127.0.0.1", port=port, log_level="warning")
@@ -34,4 +34,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -39,7 +39,10 @@ dashboard is launched with one click, opens in a browser, refreshes every five
 seconds, and reflects Codex review writes while it is open.
 The shipped review skill explicitly triggers on dashboard requests and launches
 the installed dashboard in a background PowerShell process; it directs users to
-rerun `setup.ps1` only when the shared runtime is missing.
+rerun `setup.ps1` only when the shared runtime is missing. Dashboard launch
+commands quote paths containing spaces, and the Python launcher flushes its
+tokenized URL immediately so wrappers can open it directly when browser handoff
+fails.
 
 ## Architecture and data flow
 

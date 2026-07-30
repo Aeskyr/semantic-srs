@@ -63,7 +63,7 @@ Read [grading.md](references/grading.md) before grading the first answer in a se
 When the learner asks to open, launch, or show the Semantic SRS dashboard, run:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '$launcher=Join-Path $env:LOCALAPPDATA "SemanticSRS\apps\current\semantic-srs\launch-dashboard.ps1"; Start-Process powershell.exe -ArgumentList "-NoProfile","-ExecutionPolicy","Bypass","-File",$launcher -WindowStyle Hidden'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '$launcher=Join-Path $env:LOCALAPPDATA "SemanticSRS\apps\current\semantic-srs\launch-dashboard.ps1"; $arguments="-NoProfile -ExecutionPolicy Bypass -File `"$launcher`""; Start-Process powershell.exe -ArgumentList $arguments -WindowStyle Hidden'
 ```
 
 The launcher starts the localhost dashboard with the shared learner database and
